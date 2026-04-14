@@ -12,14 +12,39 @@
       <hr>
     </header>
      <main>
+        <section id="sign-in">
+          <h2>Sign-In</h2>
+          <form>
+            <fieldset>
+              <input type="text" name="user" placeholder="Name">
+              <input type="date" name="date" value="04/14/2026">
+              <select name="role">
+                <option value="projectlead">Project Lead</option>
+                <option value="frontend">Frontend</option>
+                <option value="backend">Backend</option>
+              </select>  
+              <input list="tasks" name="current-task" placeholder="Select a Task">
+              <datalist id="tasks">
+                <option value="Poster">
+                <option value="UI application">
+                <option value="UI presentation">    
+              </datalist>
+              <textarea name="notes" placeholder="Additional Notes/Concerns" rows="2"></textarea>
+              <button type="submit">Submit!</button>
+            </fieldset>
+          </form>
+        </section>
         <section id="attendance">
           <h2><b>Attendance List</b></h2>
-          <ul>
-            <li>Yvette Long - <span>Project Lead</span></li>
-            <li>Pria Payne - <span>Backend</span></li>
-            <li>Katie Lee - <span>Frontend</span></li>
-            <li>Danielle Wagar - <span>Backend</span></li>
-          </ul>
+          <details>
+            <summary><b>Click to view Attendance List</b></summary>
+            <ul>
+              <li>Yvette Long - <span>Project Lead</span></li>
+              <li>Pria Payne - <span>Backend</span></li>
+              <li>Katie Lee - <span>Frontend</span></li>
+              <li>Danielle Wagar - <span>Backend</span></li>
+            </ul>
+          </details>
         </section>
         <section id="agenda">
           <h2>AGENDA:</h2>
@@ -27,6 +52,7 @@
               <li><em>Finalize</em> poster's sections</li>
               <li>Start drafting problem statement and research question</li>
               <li>Talking about UI application and splitting the tasks</li>
+              <li>Start UI presentation</li>
             </ol>
             <p>Note: <i>UI application</i> is the visual and interactive surface of software.</p>
         </section>
@@ -50,7 +76,13 @@
             <a href="https://docs.google.com/document/d/1znH68UQvk-8IlW86sqrqzF-OjSaYY8ygIAvEbTEZ4QI/edit?usp=sharing">Poster Draft Outline</a>
           </nav>
           <h3>AUDIO:</h3>
+          <audio controls>
+            <source src="IMG_0661.ogg" type="audio/ogg">
+          </audio>
           <h3>VIDEO:</h3>
+          <video width="320" height="240" controls>
+          <source src="IMG_0661.mp4" type="video/mp4">
+          </video>
       </section>      
     </main>
     <footer>
