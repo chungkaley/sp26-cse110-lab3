@@ -15,16 +15,43 @@ h3 {
 }
 footer {
   background-color:lightcyan; /*color name*/
+  margin: 20px 10px 15px 5px; /* short hand margin*/
+  padding: 15px 10px 15px 10px; /* short hand padding*/
 }
 span{
     color:gray;
 }
 button{
     background-color: var(--main-blue, lightskyblue); /*background*/
+
+    padding-top: 8px; /*long hand padding*/
+    padding-bottom: 8px; 
+    padding-right: 12px;
+    padding-left: 12px;
 }
 summary {
   color: color(display-p3 0.2 0.6 1); /*color(colorspace c1 c2 c3[ / A])*/
 }
 section{
     background-color:rgba(255, 165, 0, 0.05); /*background*/
+    font-size: 1.2em; /*relative units*/
+    padding: 1rem; 
+    width: 75%;
+
+    margin: 10px auto; /*auto margin*/
+}
+img{ /*these images are just low quality*/
+    width: 650px; /*abs units*/
+    height: 2in;
+    outline-width: 2pt;
+
+    border-style: solid; /*borders*/
+    border-color: lightcyan;
+    border-width: 3px;
+    border-radius: 10px;
+
+    margin-top: 10px; /*long hand margin*/
+    margin-bottom: 10px;
+    margin-left: 15px;
+    margin-right: 15px;
 }
