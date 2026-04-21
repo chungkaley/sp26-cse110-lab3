@@ -1,3 +1,30 @@
+:root{
+    --main-blue:#ADD8E6; /*CSS variable that has fallback*/
+}
 body {
-  background-color:cornsilk;
+  background-color:color-mix(in srgb, lightyellow 80%, white 20%); /*color-mix(method, color1[ p1], color2[ p2]) */
+}
+p{
+    color:rgba(255, 80, 150, 0.9); /*rgba(r, g, b, a) */
+}
+h2{
+    color: #2f8f3d; /*hex code*/
+}
+h3 {
+  color: hsl(210, 70%, 40%);
+}
+footer {
+  background-color:lightcyan; /*color name*/
+}
+span{
+    color:gray;
+}
+button{
+    background-color: var(--main-blue, lightskyblue); /*background*/
+}
+summary {
+  color: color(display-p3 0.2 0.6 1); /*color(colorspace c1 c2 c3[ / A])*/
+}
+section{
+    background-color:rgba(255, 165, 0, 0.05); /*background*/
 }
