@@ -7,19 +7,34 @@ body {
 p{
     color:rgba(255, 80, 150, 0.9); /*rgba(r, g, b, a) */
 }
+header{
+    height: 25vh; /* rel units*/
+    background-color: lightyellow;
+    
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
 h2{
     color: #2f8f3d; /*hex code*/
+    text-decoration: underline; /*text styling*/
+    text-align: left;
+
+    position: relative; 
+    left: 10px;
 }
 h3 {
   color: hsl(210, 70%, 40%);
 }
 footer {
   background-color:lightcyan; /*color name*/
-  margin: 20px 10px 15px 5px; /* short hand margin*/
+  margin: 20px 0px 0px 0px; /* short hand margin*/
   padding: 15px 10px 15px 10px; /* short hand padding*/
+
 }
 span{
     color:gray;
+    display: inline; /*display*/
 }
 button{
     background-color: var(--main-blue, lightskyblue); /*background*/
@@ -28,17 +43,39 @@ button{
     padding-bottom: 8px; 
     padding-right: 12px;
     padding-left: 12px;
+
+    display:inline-block; /*display*/
+}
+button:hover {
+    background-color:lightblue; 
+    cursor: pointer;
+}
+button:active {
+    background-color: steelblue;   
+    transform: scale(0.95);       
 }
 summary {
   color: color(display-p3 0.2 0.6 1); /*color(colorspace c1 c2 c3[ / A])*/
+  background-color: aliceblue;
+  cursor: pointer;
+  display:block;
+
+  height: 50px; /*sizing*/
+  width: 75%;
+  max-width: 700px;
+  min-width: 300px;
+
+  margin: 10px;
+
 }
 section{
     background-color:rgba(255, 165, 0, 0.05); /*background*/
+    
     font-size: 1.2em; /*relative units*/
     padding: 1rem; 
-    width: 75%;
+    width: 85%;
 
-    margin: 10px auto; /*auto margin*/
+    margin: 40px auto; /*auto margin*/
 }
 img{ /*these images are just low quality*/
     width: 650px; /*abs units*/
