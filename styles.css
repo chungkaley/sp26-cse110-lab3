@@ -1,3 +1,8 @@
+* { /*Universal Selector */
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
 :root{
     --main-blue:#ADD8E6; /*CSS variable that has fallback*/
 }
@@ -15,22 +20,32 @@ main{ /*grid*/
     grid-template-rows: auto;
     gap: 20px; 
     padding: 20px;
-    align-items: stretch;
 
 }
-body {
+body { /*Element Selector */
   background-color:color-mix(in srgb, lightyellow 80%, white 20%); /*color-mix(method, color1[ p1], color2[ p2]) */
 }
 p{
     color:rgba(255, 80, 150, 0.9); /*rgba(r, g, b, a) */
 }
-header{
-    height: 25vh; /* rel units*/
+/*Nested Selectors*/
+header {
+    height: 10vh; /* rel units*/
     background-color: lightyellow;
     position: sticky;
     top: 0;
     z-index: 100;
     font-size: 2.5rem;
+
+    & p {
+        font-size: 3rem;
+        text-decoration: underline;
+    }
+
+}
+h1, h2, h3{ /*Selector List*/
+    font-family: 'Courier New', Courier, monospace;
+    margin-bottom: 10px;
 }
 h2{
     color: #2f8f3d; /*hex code*/
@@ -47,12 +62,12 @@ footer {
   background-color:lightcyan; /*color name*/
   margin: 20px 0px 0px 0px; /* short hand margin*/
   padding: 15px 10px 15px 10px; /* short hand padding*/
-  font-size: 2.5rem;
+  font-size: 3rem;
 
 }
 span{
     color:gray;
-    display: inline; /*display*/
+    display: inline-block; /*display*/
 }
 button{
     background-color: var(--main-blue, lightskyblue); /*background*/
@@ -62,8 +77,10 @@ button{
     padding-right: 12px;
     padding-left: 12px;
 
-    display:inline-block; /*display*/
+    display: inline;
+
 }
+
 button:hover {
     background-color:lightblue; 
     cursor: pointer;
@@ -87,14 +104,28 @@ summary {
 
 }
 section{
-   background-color:rgba(255, 165, 0, 0.05); /*background*/
+   background-color:rgba(241, 209, 158, 0.05); /*background*/
     
-    font-size: 2.7em; /*relative units*/
+    font-size: 3em; /*relative units*/
     padding: 1rem; 
     width: 85%;
 
-    margin: 40px auto; /*auto margin*/
+    margin: 40px auto; 
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05); 
+    border: 1px solid rgba(0,0,0,0.05);
 
+}
+section p{ /*Descendant Combinator*/
+    font-size: 2.8rem;
+    font-style:italic;
+}
+section ol {
+    padding-left: 60px;
+    margin: 20px 0;
+}
+section ul{
+    padding-left: 60px; 
+    margin: 20px 0;
 }
 img{ /*these images are just low quality*/
     width: 650px; /*abs units*/
@@ -110,4 +141,60 @@ img{ /*these images are just low quality*/
     margin-bottom: 10px;
     margin-left: 15px;
     margin-right: 15px;
+}
+a[href*="canva"]{ /*Attribute Selector*/
+    color: #00c4cc; 
+    font-weight:bold;
+}
+a:hover { /*Pseudo-class Selector (e.g. p:hover)*/
+  background-color:lightsalmon;
+  text-decoration: underline;
+}
+
+ol > li { /*Child Combinator (element > element)*/
+    font-family:'Times New Roman', Times, serif;
+    color: plum;
+    font-weight: bold;
+}
+h3 ~ p{ /*General sibling combinator*/
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    text-decoration-style: dashed;
+}
+p + hr{ /*Adjacent sibling combinator*/
+    border: none;
+    height: 3px;
+    background-color:green;
+}
+div.image-row{ /*Combining Two Selectors*/
+    background-color:lightcyan;
+    padding: 20px;
+    border-radius: 15px;
+}
+section:has(form) { /*New Selectors */
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1); 
+    max-width: 100%;
+    overflow: hidden;
+    & input, & select, & label {
+        display: block;           
+        width: 100%;              
+        margin-bottom: 15px;       
+        /*font-size: 2.7rem;*/
+        font-size: clamp(1.2rem, 5vw, 2.7rem);
+        padding: 10px;   
+    }
+
+    & textarea{
+        /*font-size: 2.4rem;*/
+        font-size: clamp(1rem, 4vw, 2.4rem); 
+        min-height: 150px;
+    }
+    & button {
+        height: auto;
+        padding: 10px 25px;
+        width: auto;
+        min-width: 270px;
+        min-height: 90px;
+        font-size: clamp(1rem, 3vw, 2rem);
+        cursor: pointer;
+    }
 }
