@@ -1,143 +1,144 @@
 * { /*Universal Selector */
     box-sizing: border-box;
     margin: 0;
-    padding: 0;
 }
 :root{
     --main-blue:#ADD8E6; /*CSS variable that has fallback*/
 }
-.image-row{ /*flexbox*/
+.image-row{ /*Flexbox*/
     display: flex; 
     align-items: center;
     justify-content: center;
     flex-direction: row;
+    gap: 15px; 
+ 
+}
+#sign-in form fieldset { /*Grid*/
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     gap: 15px;
-
+    justify-items: center;
 }
-main{ /*grid*/
-    display: grid; 
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: auto;
-    gap: 20px; 
-    padding: 20px;
-
-}
-body { /*Element Selector */
-  background-color:color-mix(in srgb, lightyellow 80%, white 20%); /*color-mix(method, color1[ p1], color2[ p2]) */
+body {
+    background-color: color-mix(in srgb, lightyellow 80%, white 20%); /*Color-mix(method, color1[ p1], color2[ p2])*/
+    font-family: "DM Sans", sans-serif;
+    font-size: 16px; 
+    line-height: 1.6;
 }
 p{
     color:rgba(255, 80, 150, 0.9); /*rgba(r, g, b, a) */
 }
-/*Nested Selectors*/
+ 
 header {
-    height: 10vh; /* rel units*/
-    background-color: lightyellow;
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    font-size: 2.5rem;
-
-    & p {
-        font-size: 3rem;
-        text-decoration: underline;
-    }
-
+    width: 100%;
+    background-color: lightyellow; /*Color name (i.e ‘orange’)*/
+    text-align: center; /*Text- text-align*/
+    padding: 20pt 10pt; 
 }
+ 
+header h1 {
+    font-size: clamp(2rem, 5vw, 3.5rem); /*Rel Unit*/
+    color: darksalmon;
+}
+ 
+footer {
+    background-color: lightcyan;
+    text-align: center;
+    padding: clamp(20px, 4vw, 50px);
+    font-size: 1.1rem;  
+    margin: 20px 0px 0px 0px; /* Short Hand Margin*/
+    padding: 15px 10px 15px 10px; /* Short Hand Padding*/
+}
+ 
+ 
 h1, h2, h3{ /*Selector List*/
     font-family: 'Courier New', Courier, monospace;
     margin-bottom: 10px;
 }
+ 
 h2{
-    color: #2f8f3d; /*hex code*/
-    text-decoration: underline; /*text styling*/
+    color: #2f8f3d; /*Hex Code*/
+    text-decoration: underline; 
     text-align: left;
-
-    position: relative; 
+ 
+    position: relative; /*Position - relative*/
     left: 10px;
 }
 h3 {
-  color: hsl(210, 70%, 40%);
+    color: hsl(210, 70%, 40%, 90%); /*Hue, Saturation, Lightness, Alpha values*/
 }
-footer {
-  background-color:lightcyan; /*color name*/
-  margin: 20px 0px 0px 0px; /* short hand margin*/
-  padding: 15px 10px 15px 10px; /* short hand padding*/
-  font-size: 3rem;
-
-}
+ 
 span{
     color:gray;
-    display: inline-block; /*display*/
+    display: inline-block; /*Display - inline-block*/
 }
 button{
-    background-color: var(--main-blue, lightskyblue); /*background*/
-
-    padding-top: 8px; /*long hand padding*/
+    background-color: var(--main-blue, lightskyblue); /*Apply Background Styles to Elements*/
+ 
+    padding-top: 8px; /*Long Hand Padding*/
     padding-bottom: 8px; 
     padding-right: 12px;
     padding-left: 12px;
-
-    display: inline;
-
+ 
+    display: inline; /*Display - inline*/
+ 
 }
-
-button:hover {
+ 
+button:hover { /*Pseudo-class - hover */
     background-color:lightblue; 
     cursor: pointer;
 }
-button:active {
+button:active { /*Pseudo-class - active*/
     background-color: steelblue;   
     transform: scale(0.95);       
 }
-summary {
-  color: color(display-p3 0.2 0.6 1); /*color(colorspace c1 c2 c3[ / A])*/
-  background-color: aliceblue;
-  cursor: pointer;
-  display:block;
-
-  height: 50px; /*sizing*/
-  width: 75%;
-  max-width: 700px;
-  min-width: 300px;
-
-  margin: 10px;
-
+summary { /*Fix overlap*/
+    color: color(display-p3 0.2 0.6 1); 
+    background-color: aliceblue;
+    cursor: pointer;
+    display:block;
+    height: 50px; /*Sizing*/
+    width: 75%;
+    max-width: 700px;
+    min-width: 300px;
+    border: 2px solid steelblue; /*Short Hand Border*/
+    margin: 10px;
+ 
 }
 section{
-   background-color:rgba(241, 209, 158, 0.05); /*background*/
-    
-    font-size: 3em; /*relative units*/
-    padding: 1rem; 
-    width: 85%;
-
-    margin: 40px auto; 
-    box-shadow: 0 4px 15px rgba(0,0,0,0.05); 
-    border: 1px solid rgba(0,0,0,0.05);
-
+    width: 100%; /*Rel Unit*/
+    margin: 0;
+    padding: 20px;
+ 
+    box-sizing: border-box;
+ 
+    background-color: rgba(241, 209, 158, 0.05);
+    border-bottom: 1px solid rgba(0,0,0,0.08);
+ 
 }
+ 
+ 
 section p{ /*Descendant Combinator*/
-    font-size: 2.8rem;
+    font-size: 1rem;
     font-style:italic;
 }
-section ol {
-    padding-left: 60px;
-    margin: 20px 0;
+section ol,
+section ul {
+    padding-left: 20px;
+    margin: 10px 0;
+    font-size: 1rem;
 }
-section ul{
-    padding-left: 60px; 
-    margin: 20px 0;
-}
-img{ /*these images are just low quality*/
-    width: 650px; /*abs units*/
-    height: 2in;
-    outline-width: 2pt;
-
-    border-style: solid; /*borders*/
+img{ 
+    max-width: 390px;
+    height: auto;
+    display: block;
+ 
+    border-style: solid; /*Long Hand Border*/
     border-color: lightcyan;
-    border-width: 3px;
+    border-width: 3pt; /*Abs Unit*/
     border-radius: 10px;
-
-    margin-top: 10px; /*long hand margin*/
+ 
+    margin-top: 10px; /*Long Hand Margin*/
     margin-bottom: 10px;
     margin-left: 15px;
     margin-right: 15px;
@@ -148,15 +149,15 @@ a[href*="canva"]{ /*Attribute Selector*/
 }
 a:hover { /*Pseudo-class Selector (e.g. p:hover)*/
   background-color:lightsalmon;
-  text-decoration: underline;
+  text-decoration: underline; /*Text - text-deocration*/
 }
-
+ 
 ol > li { /*Child Combinator (element > element)*/
-    font-family:'Times New Roman', Times, serif;
-    color: plum;
+    font-family:"Noto Serif", sans-serif; /*Use a 3rd party font*/
+    color: plum; /*Text - Color*/
     font-weight: bold;
 }
-h3 ~ p{ /*General sibling combinator*/
+h3 ~ p{ /*General sibling combinator (element ~ element)*/
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     text-decoration-style: dashed;
 }
@@ -165,27 +166,49 @@ p + hr{ /*Adjacent sibling combinator*/
     height: 3px;
     background-color:green;
 }
-div.image-row{ /*Combining Two Selectors*/
+div.image-row{ /*Combining Two Selectors (element.class)*/
     background-color:lightcyan;
     padding: 20px;
     border-radius: 15px;
 }
-section:has(form) { /*New Selectors */
+ 
+/* Margin: Auto */
+.centered {
+    display: block;
+    width: 80%;
+    margin: auto;
+}
+ 
+.sticky-nav { /*Fix sticky header*/
+    position: sticky; /*Position - sticky*/
+    top: 0;
+    background-color: lightyellow;
+    z-index: 10;
+    padding: 8px 1%; /*Abs Unit*/
+    border-bottom: 2px solid var(--main-blue, lightskyblue);
+}
+ 
+.section-divider {
+    height: 0.05cm; /*Abs Unit*/
+    background-color: var(--main-blue, lightskyblue);
+    margin: 10px 0;
+}
+ 
+section:has(form) { /*New Selectors - has()*/
     box-shadow: 0 10px 20px rgba(0,0,0,0.1); 
     max-width: 100%;
     overflow: hidden;
-    & input, & select, & label {
+ 
+    & input, & select, & label { /*New Selectors - Nested Selectors*/
         display: block;           
         width: 100%;              
         margin-bottom: 15px;       
-        /*font-size: 2.7rem;*/
-        font-size: clamp(1.2rem, 5vw, 2.7rem);
+        font-size: 1rem; /*Rel Unit*/
         padding: 10px;   
     }
-
+ 
     & textarea{
         /*font-size: 2.4rem;*/
-        font-size: clamp(1rem, 4vw, 2.4rem); 
         min-height: 150px;
     }
     & button {
@@ -194,7 +217,46 @@ section:has(form) { /*New Selectors */
         width: auto;
         min-width: 270px;
         min-height: 90px;
-        font-size: clamp(1rem, 3vw, 2rem);
         cursor: pointer;
     }
 }
+/*Responsiveness */
+@media (max-width: 900px) {
+  .image-row {
+    flex-direction: column;
+    align-items: center;
+    font-size: 15px;
+  }
+
+  audio{
+    width: 90%;
+    height: 50px;
+  }
+}
+@media (max-width: 600px) {
+    h1 {
+        font-size: 2.2rem;   
+        margin-bottom: 10px;
+    }
+    header {
+        padding: 30px 15px;
+    }
+    section:has(form) {
+        margin-top: 10px;   
+        padding: 15px;
+    }
+    section h2 {
+        font-size: 1.8rem;
+    }
+    #sign-in form fieldset {
+        grid-template-columns: 1fr; 
+  }
+    .image-row img {
+        width: 110%;
+        max-width: none;
+  }
+  .image-row {
+    flex-direction: column;
+  }
+}
+ 
